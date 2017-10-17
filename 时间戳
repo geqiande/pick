@@ -1,0 +1,13 @@
+//百度富文本转化字符
+	function compstr(str){
+		return str.replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+	}
+	//日期转时间戳  适合2014年07月10日  2014-07-10 10:21:12   2014-07-10 2014年07月10日
+	function times(str){
+		var timeStr = str.replace(/年|月/g,'-').replace(/日/g,' '); //可解析2014年07月10日
+		return Date.parse(new Date(timeStr));//到毫秒 可解析 2014-07-10 10:21:12   2014-07-10 2014年07月10日
+	}
+	//时间戳转日期
+	 function getLocalTime(nS) {     
+       return new Date(parseInt(nS) * 1000).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ");      
+    } 
